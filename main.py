@@ -758,7 +758,6 @@ def check_http_server(node_str, timeout, max_retries, retry_delay, method, conne
             }
             if FORCE_DIRECT:
                 request_kwargs["proxies"] = {"http": None, "https": None}
-                request_kwargs["trust_env"] = False
 
             if method.upper() == "HEAD":
                 resp = requests.head(url, **request_kwargs)
