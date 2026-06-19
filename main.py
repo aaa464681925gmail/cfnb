@@ -1428,7 +1428,10 @@ def batch_update_cloudflare_dns(ip_list, ip_info=None, full_bw_results=None, tar
             http_lat_ms = http_latency_map[node]
         if http_jitter_map and node in http_jitter_map:
             http_jitter_ms = http_jitter_map[node]
-        line = f"{i}. {content} 速度 {speed:.2f} Mbps"
+        
+        # 让显示标签带上国家代码
+        display_label = node if '#' in node else content
+        line = f"{i}. {display_label} 速度 {speed:.2f} Mbps"
         if http_lat_ms is not None:
             line += f" 延迟 {http_lat_ms:.2f} ms"
         if http_jitter_ms is not None:
