@@ -1,5 +1,5 @@
 #!/bin/bash
-github_token="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"
+github_token="${GITHUB_TOKEN}"
 github_username="aaa464681925gmail"
 repo_name="cfnb"
 branch="main"
